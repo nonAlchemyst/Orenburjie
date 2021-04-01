@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.appunity.retrofit2:converter-gson:2.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.appunity.retrofit2/converter-gson/2.0.2/a16c2bb43747f25a88c7591e0b2a98312473ee04/converter-gson-2.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.appunity.retrofit2/converter-gson/2.0.2/e0beea4a7bafbb5fba5d2a251fd672f322e1ede1/converter-gson-2.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

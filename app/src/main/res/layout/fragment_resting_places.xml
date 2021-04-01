@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".priroda.fragments.PrirodaItemFragment">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="В разработке"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/restingPlaces_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

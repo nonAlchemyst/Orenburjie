@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "893827682618",
+    "project_id": "dost-orenburjya-image",
+    "storage_bucket": "dost-orenburjya-image.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893827682618:android:3383f513056e8325520003",
+        "android_client_info": {
+          "package_name": "com.example.orenburjie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893827682618-oncgnqpnmh2umt29jm2580d51m33hbv9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.orenburjie",
+            "certificate_hash": "f5a42de11739d2886b51835b5bc753b189d0ce09"
+          }
+        },
+        {
+          "client_id": "893827682618-8ql4k5netg3qg495uinvlte2npm9rl5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjCliNJ1yT4O0puTjqeKEeOQsLMt4yIcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893827682618-8ql4k5netg3qg495uinvlte2npm9rl5f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

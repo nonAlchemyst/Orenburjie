@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.appunity.retrofit2:retrofit:2.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.appunity.retrofit2/retrofit/2.0.2/b5b7e55062670fcacb3fe7df01a3b1d702f78d6d/retrofit-2.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.appunity.retrofit2/retrofit/2.0.2/bf46af55fb5f582a420debd8dcc363e40fbabeb2/retrofit-2.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
