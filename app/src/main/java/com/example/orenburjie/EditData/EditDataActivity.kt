@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.orenburjie.AddRestingPlacesActivity
 import com.example.orenburjie.Item
 import com.example.orenburjie.R
 import com.example.orenburjie.priroda.objects.RestingPlace
@@ -32,7 +31,8 @@ class EditDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_data)
-        ref =  FirebaseDatabase.getInstance().getReference("Priroda").child("Interesnie Mesta")
+        //ref =  FirebaseDatabase.getInstance().getReference("Priroda").child("Interesnie Mesta")
+        ref =  FirebaseDatabase.getInstance().getReference("Priroda").child("Zapovedniki")
         storage = Firebase.storage
         storageRef = FirebaseStorage.getInstance().getReference("Interesnie Mesta")
 
@@ -63,12 +63,12 @@ class EditDataActivity : AppCompatActivity() {
 
         val itemId = ref.push().key
         val list = ArrayList<String>()
-        list.add("Priroda/Interesnie Mesta/Karamurun/karamurun0.jpg")
-        list.add("Priroda/Interesnie Mesta/Karamurun/karamurun1.jpg")
-        list.add("Priroda/Interesnie Mesta/Karamurun/karamurun2.jpg")
+        list.add("Priroda/Zapovedniki/Buzulukskii Bor/buzulukskii_bor1.jpg")
+        list.add("Priroda/Zapovedniki/Buzulukskii Bor/buzulukskii_bor2.jpg")
+        list.add("Priroda/Zapovedniki/Buzulukskii Bor/buzulukskii_bor3.jpg")
 
         val restingPlaces = ArrayList<RestingPlace>()
-        restingPlaces.add(RestingPlace("Саракташ", "Россия, Оренбургская область, Саракташский район, посёлок Саракташ, Сакмарская улица, 7", "+73533361359", "https://travel.yandex.ru/hotels/orenburg-oblast/saraktash"))
+        restingPlaces.add(RestingPlace("Name", "Street", "phone", "link"))
         //list.add("Priroda/Interesnie Mesta/Ural/ural3.jpg")
         val item = Item(itemId!!, title.text.toString(), description.text.toString(), list, latitude.text.toString(), longitude.text.toString(), restingPlaces)
         ref.child(itemId).setValue(item).addOnCompleteListener {

@@ -32,6 +32,8 @@ class ListFragment : Fragment() {
     private var items = ArrayList<Item>()
     private var list: ListView? = null
     private lateinit var Interface: OnTransferReference
+    private lateinit var listListener: ValueEventListener
+    private lateinit var ref: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,32 +49,34 @@ class ListFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_priroda_list, container, false)
         Interface = context as OnTransferReference
-        val ref: DatabaseReference? =  Interface.getReference(R.id.listFragment)
+        ref =  Interface.getReference(R.id.listFragment)!!
         list = view.findViewById(R.id.prirodaList)
-        ref?.addValueEventListener(object: ValueEventListener{
+        listListener = ref.addValueEventListener(object: ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
                 Log.w(TAG, "loadPost:onCancelled", error.toException())
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot?.exists()){
+                if(snapshot.exists()){
                     items.clear()
                     for(item in snapshot.children){
                         try {
                             items.add(item.getValue(Item::class.java)!!)
                         }catch (e: Exception){
-                            if(context != null)
-                                Toast.makeText(context, "Получен неверный формат данных", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Получен неверный формат данных", Toast.LENGTH_SHORT).show()
                         }
                     }
-                    if(context != null)
-                        list?.adapter = AdapterList(context!!, R.layout.list_item, items)
+                    list?.adapter = AdapterList(context!!, R.layout.list_item, items)
                 }
             }
         })
 
-
         return view
+    }
+
+    override fun onStop() {
+        super.onStop()
+        ref.removeEventListener(listListener)
     }
 
     companion object {

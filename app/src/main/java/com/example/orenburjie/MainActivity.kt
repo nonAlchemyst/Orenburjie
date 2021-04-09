@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        btnPriroda?.setOnClickListener {
+        btnPriroda.setOnClickListener {
             startActivity(Intent(this, PrirodaActivity::class.java))
         }
 

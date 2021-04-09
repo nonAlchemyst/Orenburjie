@@ -16,9 +16,4 @@
         android:label="fragment_zapovedniki_list"
         tools:layout="@layout/fragment_zapovedniki_list">
     </fragment>
-    <fragment
-        android:id="@+id/prirodaItemFragment"
-        android:name="com.example.orenburjie.priroda.fragments.PrirodaItemFragment"
-        android:label="fragment_priroda_item"
-        tools:layout="@layout/fragment_resting_places" />
 </navigation>

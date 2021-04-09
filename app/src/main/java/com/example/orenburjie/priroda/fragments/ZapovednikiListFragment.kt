@@ -1,11 +1,22 @@
 package com.example.orenburjie.priroda.fragments
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
+import android.widget.Toast
+import com.example.orenburjie.AdapterList
+import com.example.orenburjie.Item
 import com.example.orenburjie.R
+import com.example.orenburjie.priroda.interfaces.OnTransferReference
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +32,11 @@ class ZapovednikiListFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var items = ArrayList<Item>()
+    private var list: ListView? = null
+    private lateinit var Interface: OnTransferReference
+    private lateinit var listListener: ValueEventListener
+    private lateinit var ref: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,19 +50,34 @@ class ZapovednikiListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_zapovedniki_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_zapovedniki_list, container, false)
+        Interface = context as OnTransferReference
+        ref =  Interface.getReference(R.id.zapovednikiListFragment)!!
+        list = view.findViewById(R.id.zapovednikiList)
+        listListener = ref.addValueEventListener(object: ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                Log.w(ContentValues.TAG, "loadPost:onCancelled", error.toException())
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    items.clear()
+                    for(item in snapshot.children){
+                        try {
+                            items.add(item.getValue(Item::class.java)!!)
+                        }catch (e: Exception){
+                            Toast.makeText(context, "Получен неверный формат данных", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    list?.adapter = AdapterList(context!!, R.layout.list_item, items)
+                }
+            }
+        })
+
+        return view
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ZapovednikiListFragment.
-         */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =

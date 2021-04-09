@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orenburjie">
-        <activity android:name=".AddRestingPlacesActivity"></activity>
+        <activity android:name=".EditData.AddRestingPlacesActivity"></activity>
         <activity android:name=".priroda.PrirodaItemActivity" />
         <activity android:name=".EditData.EditDataActivity" />
         <activity android:name=".priroda.PrirodaActivity" />

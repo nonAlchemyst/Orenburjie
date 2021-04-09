@@ -20,25 +20,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="prirodaItemFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-91" />
-                            <option name="y" value="351" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="zapovednikiListFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="12" />
+                            <option name="x" value="192" />
+                            <option name="y" value="21" />
                           </Point>
                         </option>
                       </LayoutPositions>
