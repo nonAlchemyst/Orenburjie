@@ -1,4 +1,4 @@
-package com.example.orenburjie.priroda.fragments
+package com.example.orenburjie
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.orenburjie.Item
-import com.example.orenburjie.R
 import com.example.orenburjie.priroda.interfaces.OnTransferItem
 import com.yandex.mapkit.Animation
 import com.yandex.mapkit.MapKitFactory
@@ -80,7 +78,6 @@ class MapFragment : Fragment(), CameraListener {
          * @param param2 Parameter 2.
          * @return A new instance of fragment MapFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
                 MapFragment().apply {

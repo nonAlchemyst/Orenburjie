@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditData.EditCultureDataActivity">
+
+    <EditText
+        android:id="@+id/EDC_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="title"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <EditText
+        android:id="@+id/EDC_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="latitude"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/EDC_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="longitude"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/EDC_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="description"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/EDC_image_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="image link"
+        android:inputType="textPersonName" />
+
+    <ListView
+        android:id="@+id/EDC_links_list"
+        android:layout_width="match_parent"
+        android:layout_height="75dp" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/EDC_add_image_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add image link" />
+
+    <Button
+        android:id="@+id/EDC_add_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add item" />
+</LinearLayout>

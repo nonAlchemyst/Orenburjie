@@ -18,14 +18,6 @@ class AdapterList(private val context: Context, private val resource: Int, priva
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = LayoutInflater.from(parent.context).inflate(resource, parent, false)
 
-        view.setOnClickListener {
-            //Log.d("tag","tag")
-            var bundle = Bundle()
-            bundle.putSerializable("Item", items[position])
-            var intent = Intent(context, PrirodaItemActivity::class.java)
-            intent.putExtras(bundle)
-            context.startActivity(intent)
-        }
         val image = view.findViewById<ImageView>(R.id.photo)
         val path = items[position].images?.get(0)!!
         Global.loadImageFromStorage(path, image)

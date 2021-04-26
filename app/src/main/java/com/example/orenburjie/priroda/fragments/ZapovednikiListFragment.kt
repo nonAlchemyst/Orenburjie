@@ -1,6 +1,7 @@
 package com.example.orenburjie.priroda.fragments
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,6 +13,7 @@ import android.widget.Toast
 import com.example.orenburjie.AdapterList
 import com.example.orenburjie.Item
 import com.example.orenburjie.R
+import com.example.orenburjie.priroda.PrirodaItemActivity
 import com.example.orenburjie.priroda.interfaces.OnTransferReference
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -66,10 +68,20 @@ class ZapovednikiListFragment : Fragment() {
                         try {
                             items.add(item.getValue(Item::class.java)!!)
                         }catch (e: Exception){
-                            Toast.makeText(context, "Получен неверный формат данных", Toast.LENGTH_SHORT).show()
+                            if(context != null)
+                                Toast.makeText(context, "Получен неверный формат данных", Toast.LENGTH_SHORT).show()
                         }
                     }
-                    list?.adapter = AdapterList(context!!, R.layout.list_item, items)
+                    if(context != null) {
+                        list?.adapter = AdapterList(context!!, R.layout.nature_list_item, items)
+                        list?.setOnItemClickListener { parent, view, position, id ->
+                            var bundle = Bundle()
+                            bundle.putSerializable("Item", items[position])
+                            var intent = Intent(context, PrirodaItemActivity::class.java)
+                            intent.putExtras(bundle)
+                            context!!.startActivity(intent)
+                        }
+                    }
                 }
             }
         })
@@ -78,7 +90,6 @@ class ZapovednikiListFragment : Fragment() {
     }
 
     companion object {
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             ZapovednikiListFragment().apply {

@@ -23,6 +23,15 @@ class Item: Serializable{
         this.restingPlaces = restingPlaces
     }
 
+    constructor(id:String, title:String, description:String, images: ArrayList<String>, latitude: String, longitude: String){
+        this.id = id
+        this.title = title
+        this.description = description
+        this.images = images
+        this.latitude = latitude
+        this.longitude = longitude
+    }
+
     constructor(){}
 
     fun toPoint(): Point {
