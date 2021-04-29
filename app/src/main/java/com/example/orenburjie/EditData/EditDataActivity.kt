@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
+import com.example.orenburjie.EditEkskursiiActivity
 import com.example.orenburjie.Item
 import com.example.orenburjie.R
 import com.example.orenburjie.priroda.objects.RestingPlace
@@ -32,6 +33,7 @@ class EditDataActivity : AppCompatActivity() {
     lateinit var backListBtn: Button
     lateinit var LinkList: ArrayList<String>
     lateinit var toEditCulture: Button
+    lateinit var toEditExcursions: Button
     lateinit var add_link: Button
     lateinit var imageLink: EditText
     lateinit var linksList: ListView
@@ -52,11 +54,16 @@ class EditDataActivity : AppCompatActivity() {
         list = findViewById(R.id.editData_ItemsList)
         backListBtn = findViewById(R.id.editData_ItemsList_back)
         toEditCulture = findViewById(R.id.editData_to_edit_culture)
+        toEditExcursions = findViewById(R.id.editData_to_editExcursions)
         add_link = findViewById(R.id.ED_add_link)
         imageLink = findViewById(R.id.ED_link)
         linksList = findViewById(R.id.ED_links_list)
         toEditCulture.setOnClickListener {
             startActivity(Intent(this, EditCultureDataActivity::class.java))
+        }
+
+        toEditExcursions.setOnClickListener {
+            startActivity(Intent(this, EditEkskursiiActivity::class.java))
         }
 
         addRP.setOnClickListener {

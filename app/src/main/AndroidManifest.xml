@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orenburjie">
-        <activity android:name=".cultura.CultureItemActivity"></activity>
+        <activity android:name=".excursions.ExcursionsItemActivity"></activity>
+        <activity android:name=".excursions.ExcursionsActivity" />
+        <activity android:name=".EditEkskursiiActivity" />
+        <activity android:name=".cultura.CultureItemActivity" />
         <activity android:name=".EditData.EditCultureDataActivity" />
         <activity android:name=".cultura.CultureActivity" />
         <activity android:name=".EditData.AddRestingPlacesActivity" />

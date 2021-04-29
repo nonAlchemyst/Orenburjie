@@ -31,7 +31,8 @@ class AddRestingPlacesActivity : AppCompatActivity() {
         link = findViewById(R.id.RP_pathToSite)
         phone = findViewById(R.id.RP_phone)
         street = findViewById(R.id.RP_street)
-        ref =  FirebaseDatabase.getInstance().getReference("Priroda").child("Interesnie Mesta")
+                //ref =  FirebaseDatabase.getInstance().getReference("Priroda").child("Interesnie Mesta")
+        ref =  FirebaseDatabase.getInstance().getReference("Excursions")
         btnAdd.setOnClickListener {
             push(id.text.toString())
         }

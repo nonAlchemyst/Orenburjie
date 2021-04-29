@@ -74,21 +74,34 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/editData_to_edit_culture"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Edit Culture"
-            android:textSize="10dp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/addRP"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Add resting place"
-            android:textSize="10dp"
-            tools:layout_editor_absoluteX="151dp"
-            tools:layout_editor_absoluteY="541dp" />
+            <Button
+                android:id="@+id/editData_to_edit_culture"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Edit Culture"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/addRP"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Add resting place"
+                android:textSize="10dp"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="541dp" />
+
+            <Button
+                android:id="@+id/editData_to_editExcursions"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="edit ekskursii" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout

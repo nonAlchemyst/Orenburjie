@@ -32,6 +32,13 @@ class Item: Serializable{
         this.longitude = longitude
     }
 
+    constructor(id:String, title:String, description:String, images: ArrayList<String>){
+        this.id = id
+        this.title = title
+        this.description = description
+        this.images = images
+    }
+
     constructor(){}
 
     fun toPoint(): Point {
