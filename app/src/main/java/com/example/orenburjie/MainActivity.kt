@@ -17,14 +17,15 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
 
-        lateinit var instance: MainActivity
+        var instance: MainActivity? = null
             private set
 
     }
 
+    private var viewModel: MainViewModel? = null
+
     var firebase = FirebaseDatabase.getInstance()
         private set
-    lateinit var viewModel: MainViewModel
 
     init {
         instance = this

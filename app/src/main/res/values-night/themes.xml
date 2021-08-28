@@ -17,7 +17,9 @@
         <item name="nav_bar_height">44dp</item>
 
         <item name="primaryTextColor">@color/cffffff</item>
+        <item name="secondaryTextColor">@color/c262626</item>
         <item name="primaryBackgroundColor">@color/c262626</item>
         <item name="secondaryBackgroundColor">@color/c3b3b3b</item>
+        <item name="gradientStartColor">@color/c80ffffff</item>
     </style>
 </resources>

@@ -3,6 +3,8 @@
     <attr name="nav_bar_height" format="dimension"/>
     <attr name="nav_bar_with_title_title_color" format="color"/>
     <attr name="primaryTextColor" format="color"/>
+    <attr name="secondaryTextColor" format="color"/>
     <attr name="primaryBackgroundColor" format="color"/>
     <attr name="secondaryBackgroundColor" format="color"/>
+    <attr name="gradientStartColor" format="color"/>
 </resources>

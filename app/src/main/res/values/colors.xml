@@ -18,4 +18,6 @@
     <color name="c121212">#121212</color>
     <color name="cf9f9f9">#f9f9f9</color>
     <color name="c3b3b3b">#3b3b3b</color>
+    <color name="c80ffffff">#80FFFFFF</color>
+    <color name="c80000000">#80000000</color>
 </resources>

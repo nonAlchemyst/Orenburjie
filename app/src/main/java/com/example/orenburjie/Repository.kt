@@ -15,11 +15,8 @@ class Repository {
 
     companion object{
         private const val map_apikey: String = "b31628fd-7b04-425c-a4ab-994bb68fe5ea"
-        private const val sharedPreferenceKey = "images"
         private const val readErrorMessage = "Read error"
         private var instance: Repository = Repository()
-        private val mImages = MainActivity.instance.getPreference(sharedPreferenceKey)
-        private val mEditor = mImages.edit()
 
         fun getInstance() = instance
 

@@ -21,40 +21,47 @@ import java.io.ByteArrayOutputStream
 object ImageStorageManager {
     private const val readErrorMessage = "Read error"
     private const val sharedPreferenceKey = "images"
-    private val mImages = MainActivity.instance.getPreference(sharedPreferenceKey)
-    private val mEditor = mImages.edit()
+    private const val saveQuality = 100
+    private val mImages by lazy {
+        MainActivity.instance?.getPreference(sharedPreferenceKey)
+    }
+    private val mEditor by lazy {
+        mImages?.edit()
+    }
 
     fun loadToImageFromFirebase(path: String, image: ImageView, context: Context?){
         val storageRef = Firebase.storage.reference.child(path)
         storageRef.downloadUrl.addOnSuccessListener { uri ->
             context?.let {
-                Glide.with(MainActivity.instance.applicationContext)
-                    .load(uri)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .addListener(object: RequestListener<Drawable> {
-                        override fun onLoadFailed(
-                            e: GlideException?,
-                            model: Any?,
-                            target: Target<Drawable>?,
-                            isFirstResource: Boolean,
-                        ): Boolean {
-                            return true
-                        }
+                MainActivity.instance?.applicationContext?.let { it1 ->
+                    Glide.with(it1)
+                        .load(uri)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .addListener(object: RequestListener<Drawable> {
+                            override fun onLoadFailed(
+                                e: GlideException?,
+                                model: Any?,
+                                target: Target<Drawable>?,
+                                isFirstResource: Boolean,
+                            ): Boolean {
+                                return true
+                            }
 
-                        override fun onResourceReady(
-                            resource: Drawable?,
-                            model: Any?,
-                            target: Target<Drawable>?,
-                            dataSource: DataSource?,
-                            isFirstResource: Boolean,
-                        ): Boolean {
-                            val bitmap = (resource as BitmapDrawable).bitmap
-                            loadToSharedPreference(bitmap, path)
-                            return false
-                        }
-                    })
-                    .fitCenter()
-                    .into(image)
+                            override fun onResourceReady(
+                                resource: Drawable?,
+                                model: Any?,
+                                target: Target<Drawable>?,
+                                dataSource: DataSource?,
+                                isFirstResource: Boolean,
+                            ): Boolean {
+                                val bitmap = (resource as BitmapDrawable).bitmap
+                                loadToSharedPreference(bitmap, path)
+                                return false
+                            }
+                        })
+                        .fitCenter()
+                        .into(image)
+                }
             }
         }.addOnFailureListener {
             Log.d("Load image failed", it.message!!)
@@ -67,10 +74,11 @@ object ImageStorageManager {
     }
 
     fun imageIsLoadedToSharedPreference(key: String): Boolean{
-        mImages.apply {
+        mImages?.apply {
             return@imageIsLoadedToSharedPreference getString(key,
                 readErrorMessage) != readErrorMessage
         }
+        return false
     }
 
     private fun loadToSharedPreference(_image: Bitmap, key: String){
@@ -81,7 +89,7 @@ object ImageStorageManager {
     private fun encodeToBase64(_image: Bitmap): String{
         val image = _image
         val baos = ByteArrayOutputStream()
-        image.compress(Bitmap.CompressFormat.PNG, 100, baos)
+        image.compress(Bitmap.CompressFormat.JPEG, saveQuality, baos)
         val b = baos.toByteArray()
         val imageEncoded = Base64.encodeToString(b, Base64.DEFAULT)
         return imageEncoded
@@ -93,7 +101,7 @@ object ImageStorageManager {
     }
 
     private fun readImage(key: String): String?{
-        return mImages.getString(key, readErrorMessage)
+        return mImages?.getString(key, readErrorMessage)
     }
 
     private fun decodeToBitmap(value: String): Bitmap{
