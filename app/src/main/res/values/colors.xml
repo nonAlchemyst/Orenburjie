@@ -10,4 +10,12 @@
     <color name="nature">#5CA35F</color>
     <color name="nature_culture">#AFC8B5</color>
     <color name="culture">#543C83</color>
+
+    <color name="ceaebed">#EAEBED</color>
+    <color name="c262626">#262626</color>
+    <color name="c202020">#202020</color>
+    <color name="cffffff">#FFFFFF</color>
+    <color name="c121212">#121212</color>
+    <color name="cf9f9f9">#f9f9f9</color>
+    <color name="c3b3b3b">#3b3b3b</color>
 </resources>

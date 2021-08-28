@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/prirodaMainItemFragment2"
+    <item android:id="@+id/culture_menu_description"
         android:title="Описание"
-        android:icon="@drawable/description_icon"/>
-    <item android:id="@+id/mapFragment2"
+        android:icon="@drawable/description_ic"/>
+    <item android:id="@+id/culture_menu_map"
         android:title="На карте"
         android:icon="@drawable/map_icon"/>
 </menu>

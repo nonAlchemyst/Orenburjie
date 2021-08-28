@@ -4,6 +4,7 @@ import com.example.orenburjie.priroda.objects.RestingPlace
 import com.yandex.mapkit.geometry.Point
 import java.io.Serializable
 
+//Super duper wooper ugly class :D
 class Item: Serializable{
     var id: String? = null
     var title: String? = null
@@ -42,6 +43,9 @@ class Item: Serializable{
     constructor(){}
 
     fun toPoint(): Point {
+        if(latitude == null || longitude == null){
+            return Point(0.0, 0.0)
+        }
         return Point(latitude!!.toDouble(), longitude!!.toDouble())
     }
 

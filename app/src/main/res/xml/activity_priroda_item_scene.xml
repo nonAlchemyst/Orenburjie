@@ -9,11 +9,11 @@
         motion:duration="1000">
        <KeyFrameSet>
            <KeyAttribute
-               motion:motionTarget="@+id/priroda_item_imgRecyclerView"
+               motion:motionTarget="@+id/description_images"
                motion:framePosition="100"
                android:alpha="0" />
        </KeyFrameSet>
-        <OnSwipe motion:touchAnchorId="@id/priroda_item_imgRecyclerView"
+        <OnSwipe motion:touchAnchorId="@id/description_images"
             motion:dragDirection="dragUp"
             motion:touchAnchorSide="bottom"/>
     </Transition>
@@ -23,11 +23,11 @@
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@+id/priroda_item_imgRecyclerView"
+            android:id="@+id/description_images"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:visibility="gone"
             motion:layout_editor_absoluteY="44dp"
-            motion:layout_constraintTop_toBottomOf="@+id/priroda_item_title" />
+            motion:layout_constraintTop_toBottomOf="@+id/description_title" />
     </ConstraintSet>
 </MotionScene>

@@ -40,12 +40,12 @@ class PrirodaMainItemFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_priroda_main_item, container, false)
+        val view = inflater.inflate(R.layout.fragment_description, container, false)
         Interface = context as OnTransferItem
         item = Interface.transferItem()
-        val title = view.findViewById<TextView>(R.id.priroda_item_title)
-        val description = view.findViewById<TextView>(R.id.priroda_item_description)
-        val images = view.findViewById<RecyclerView>(R.id.priroda_item_imgRecyclerView)
+        val title = view.findViewById<TextView>(R.id.description_title)
+        val description = view.findViewById<TextView>(R.id.description_info)
+        val images = view.findViewById<RecyclerView>(R.id.description_images)
         title.text = item.title
         description.text = item.description
         val manager = LinearLayoutManager(context)

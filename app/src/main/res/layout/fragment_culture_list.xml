@@ -6,7 +6,7 @@
     tools:context=".cultura.fragments.CultureFragment">
 
     <ListView
-        android:id="@+id/cultureList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    android:id="@+id/cultureList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
 </FrameLayout>

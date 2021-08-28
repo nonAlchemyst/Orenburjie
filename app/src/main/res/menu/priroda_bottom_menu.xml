@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/prirodaMainItemFragment"
         android:title="Описание"
-        android:icon="@drawable/description_icon"/>
+        android:icon="@drawable/description_ic"/>
     <item android:id="@+id/mapFragment"
         android:title="На карте"
         android:icon="@drawable/map_icon"/>

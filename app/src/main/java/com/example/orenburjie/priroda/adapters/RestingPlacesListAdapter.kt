@@ -13,7 +13,7 @@ import com.example.orenburjie.R
 import com.example.orenburjie.priroda.objects.RestingPlace
 import java.lang.Exception
 
-class RestingPlacesListAdapter(val resource: Int, val list: ArrayList<RestingPlace>): BaseAdapter() {
+class RestingPlacesListAdapter(private val resource: Int, private val list: List<RestingPlace>): BaseAdapter() {
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = LayoutInflater.from(parent!!.context).inflate(resource, parent, false)
@@ -23,14 +23,14 @@ class RestingPlacesListAdapter(val resource: Int, val list: ArrayList<RestingPla
         name.text = getItem(position).name
         phone.text = getItem(position).phone
         street.text = getItem(position).street
-        view.setOnClickListener {
+        /*view.setOnClickListener {
             try {
                 parent!!.context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getItem(position).pathToSite)))
             }catch(E: Exception){
                 Toast.makeText(parent!!.context, "Неправильная ссылка", Toast.LENGTH_SHORT).show()
             }
-        }
-
+        }*/
+        //Временно или не временно отключено
         return view
     }
 
@@ -45,6 +45,5 @@ class RestingPlacesListAdapter(val resource: Int, val list: ArrayList<RestingPla
     override fun getCount(): Int {
         return list.size
     }
-
 
 }

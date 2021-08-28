@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Orenburjie" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Orenburjie" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#496B70</item> <!--@color/purple_500 !-->
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/c262626</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,6 +12,13 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="background" parent="android:background">@color/cffffff</item>
+        <item name="nav_bar_with_title_title_color">@color/c262626</item>
+        <item name="nav_bar_height">44dp</item>
+
+        <item name="primaryTextColor">@color/c262626</item>
+        <item name="primaryBackgroundColor">@color/ceaebed</item>
+        <item name="secondaryBackgroundColor">@color/cf9f9f9</item>
     </style>
 
     <style name="BottomNavigationItemColor" parent="Theme.MaterialComponents.DayNight.DarkActionBar">

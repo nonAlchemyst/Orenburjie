@@ -9,7 +9,7 @@
         android:id="@+id/excursionsDescriptionFragment"
         android:name="com.example.orenburjie.priroda.fragments.PrirodaMainItemFragment"
         android:label="fragment_priroda_main_item"
-        tools:layout="@layout/fragment_priroda_main_item" />
+        tools:layout="@layout/fragment_description" />
     <fragment
         android:id="@+id/excursionsInfoFragment"
         android:name="com.example.orenburjie.PrirodaItemFragment"

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="nav_bar_height" format="dimension"/>
+    <attr name="nav_bar_with_title_title_color" format="color"/>
+    <attr name="primaryTextColor" format="color"/>
+    <attr name="primaryBackgroundColor" format="color"/>
+    <attr name="secondaryBackgroundColor" format="color"/>
+</resources>

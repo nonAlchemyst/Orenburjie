@@ -1,63 +1,53 @@
 package com.example.orenburjie
 
-import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import com.example.orenburjie.EditData.EditDataActivity
-import com.example.orenburjie.cultura.CultureActivity
-import com.example.orenburjie.excursions.ExcursionsActivity
-import com.example.orenburjie.priroda.PrirodaActivity
-import com.google.firebase.database.DatabaseReference
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import com.example.orenburjie.interfaces.OnBackPressed
+import com.example.orenburjie.viewmodels.MainViewModel
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import com.yandex.mapkit.MapKitFactory
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var btnPriroda: Button
-    lateinit var btnCultura: Button
-    lateinit var btnChill: Button
-    lateinit var image: ImageView
-    lateinit var ref: DatabaseReference
-    lateinit var storage: FirebaseStorage
-    lateinit var storageRef: StorageReference
-    lateinit var nature: ImageView
-    lateinit var culture: ImageView
-    lateinit var excursions: ImageView
+    companion object{
+
+        lateinit var instance: MainActivity
+            private set
+
+    }
+
+    var firebase = FirebaseDatabase.getInstance()
+        private set
+    lateinit var viewModel: MainViewModel
+
+    init {
+        instance = this
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        if(!Global.isInitialize) {
-            Firebase.database.setPersistenceEnabled(true)
-            MapKitFactory.setApiKey(Global.map_apikey)
-            MapKitFactory.initialize(this)
-            Global.isInitialize = true
-        }
-        nature = findViewById(R.id.nature)
-        culture = findViewById(R.id.culture)
-        excursions = findViewById(R.id.excursions)
-        var developer_btn = findViewById<Button>(R.id.developer_button)
-        developer_btn.setOnClickListener {
-            startActivity(Intent(this, EditDataActivity::class.java))
-        }
-        nature.setOnClickListener {
-            startActivity(Intent(this, PrirodaActivity::class.java))
-        }
-
-        culture.setOnClickListener {
-            startActivity(Intent(this, CultureActivity::class.java))
-        }
-
-        excursions.setOnClickListener {
-            startActivity(Intent(this, ExcursionsActivity::class.java))
-        }
-
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
     }
 
+    override fun onBackPressed() {
+        Router.getInstance().systemBack()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+    fun back(){
+        //super.onBackPressed()
+        finish()
+    }
+
+    fun getPreference(key: String): SharedPreferences = getSharedPreferences(key, MODE_PRIVATE)
 }

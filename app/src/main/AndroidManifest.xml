@@ -3,6 +3,8 @@
     package="com.example.orenburjie">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Orenburjie">
+        android:theme="@style/Theme.Orenburjie"
+        android:preserveLegacyExternalStorage="true">
         <activity android:name=".excursions.ExcursionsItemActivity"></activity>
         <activity android:name=".excursions.ExcursionsActivity" />
         <activity android:name=".EditEkskursiiActivity" />
@@ -21,7 +24,8 @@
         <activity android:name=".priroda.PrirodaItemActivity" />
         <activity android:name=".EditData.EditDataActivity" />
         <activity android:name=".priroda.PrirodaActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

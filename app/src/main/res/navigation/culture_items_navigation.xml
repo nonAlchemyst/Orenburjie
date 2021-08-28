@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/culture_items_navigation"
-    app:startDestination="@id/prirodaMainItemFragment2">
+    app:startDestination="@id/culture_menu_description">
 
     <fragment
-        android:id="@+id/prirodaMainItemFragment2"
+        android:id="@+id/culture_menu_description"
         android:name="com.example.orenburjie.priroda.fragments.PrirodaMainItemFragment"
         android:label="fragment_priroda_main_item"
-        tools:layout="@layout/fragment_priroda_main_item" />
+        tools:layout="@layout/fragment_description" />
     <fragment
-        android:id="@+id/mapFragment2"
+        android:id="@+id/culture_menu_map"
         android:name="com.example.orenburjie.MapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" />
