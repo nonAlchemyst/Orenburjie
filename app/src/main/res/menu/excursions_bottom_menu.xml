@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/excursionsDescriptionFragment"
-        android:title="Описание"
-        android:icon="@drawable/description_ic"/>
-    <item android:id="@+id/excursionsInfoFragment"
-        android:title="Информация"
-        android:icon="@drawable/info_ic"/>
-</menu>

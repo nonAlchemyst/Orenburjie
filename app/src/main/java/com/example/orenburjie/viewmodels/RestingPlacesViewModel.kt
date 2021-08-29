@@ -1,9 +1,8 @@
 package com.example.orenburjie.viewmodels
 
-import com.example.orenburjie.Item
+import com.example.orenburjie.objects.Item
 import com.example.orenburjie.Repository
 import com.example.orenburjie.Router
-import com.example.orenburjie.viewmodels.base.BaseViewModel
 import com.example.orenburjie.viewmodels.base.ScreenLogicViewModel
 
 class RestingPlacesViewModel: ScreenLogicViewModel() {

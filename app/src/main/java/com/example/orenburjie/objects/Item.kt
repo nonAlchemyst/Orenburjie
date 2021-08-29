@@ -1,6 +1,5 @@
-package com.example.orenburjie
+package com.example.orenburjie.objects
 
-import com.example.orenburjie.priroda.objects.RestingPlace
 import com.yandex.mapkit.geometry.Point
 import java.io.Serializable
 

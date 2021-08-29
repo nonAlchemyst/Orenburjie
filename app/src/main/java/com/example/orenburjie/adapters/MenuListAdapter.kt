@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.orenburjie.Item
+import com.example.orenburjie.objects.Item
 import com.example.orenburjie.R
 import com.example.orenburjie.Repository
 import com.example.orenburjie.interfaces.OnMenuListItemClickListener

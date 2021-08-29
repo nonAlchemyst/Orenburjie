@@ -5,6 +5,7 @@ import android.widget.ImageView
 import com.example.orenburjie.ImageStorageManager.getImageFromSharedPreference
 import com.example.orenburjie.ImageStorageManager.imageIsLoadedToSharedPreference
 import com.example.orenburjie.ImageStorageManager.loadToImageFromFirebase
+import com.example.orenburjie.objects.Item
 
 class Repository {
 

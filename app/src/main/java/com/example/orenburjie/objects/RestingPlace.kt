@@ -1,4 +1,4 @@
-package com.example.orenburjie.priroda.objects
+package com.example.orenburjie.objects
 
 import java.io.Serializable
 

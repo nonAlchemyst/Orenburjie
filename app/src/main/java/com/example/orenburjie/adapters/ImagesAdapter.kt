@@ -1,4 +1,4 @@
-package com.example.orenburjie.priroda.adapters
+package com.example.orenburjie.adapters
 
 import android.content.Context
 import android.view.LayoutInflater

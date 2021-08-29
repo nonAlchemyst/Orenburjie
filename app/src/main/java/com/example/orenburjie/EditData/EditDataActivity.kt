@@ -8,9 +8,9 @@ import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
 import com.example.orenburjie.EditEkskursiiActivity
-import com.example.orenburjie.Item
+import com.example.orenburjie.objects.Item
 import com.example.orenburjie.R
-import com.example.orenburjie.priroda.objects.RestingPlace
+import com.example.orenburjie.objects.RestingPlace
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage

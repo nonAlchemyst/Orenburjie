@@ -1,17 +1,13 @@
-package com.example.orenburjie.priroda.adapters
+package com.example.orenburjie.adapters
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import android.widget.Toast
 import com.example.orenburjie.R
-import com.example.orenburjie.priroda.objects.RestingPlace
-import java.lang.Exception
+import com.example.orenburjie.objects.RestingPlace
 
 class RestingPlacesListAdapter(private val resource: Int, private val list: List<RestingPlace>): BaseAdapter() {
     @SuppressLint("ViewHolder")

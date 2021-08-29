@@ -2,14 +2,12 @@ package com.example.orenburjie.EditData
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.renderscript.Sampler
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.orenburjie.R
-import com.example.orenburjie.priroda.objects.RestingPlace
+import com.example.orenburjie.objects.RestingPlace
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 
 class AddRestingPlacesActivity : AppCompatActivity() {
 

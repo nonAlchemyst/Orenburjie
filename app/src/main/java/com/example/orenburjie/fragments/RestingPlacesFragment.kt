@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.orenburjie.R
 import com.example.orenburjie.fragments.base.BaseFragment
-import com.example.orenburjie.priroda.adapters.RestingPlacesListAdapter
+import com.example.orenburjie.adapters.RestingPlacesListAdapter
 import com.example.orenburjie.viewmodels.RestingPlacesViewModel
 import kotlinx.android.synthetic.main.fragment_resting_places.*
 import kotlinx.android.synthetic.main.layout_nav_bar_with_title.*

@@ -6,9 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
-import com.example.orenburjie.Item
+import com.example.orenburjie.objects.Item
 import com.example.orenburjie.R
-import com.example.orenburjie.priroda.objects.RestingPlace
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 

@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
-import com.example.orenburjie.Item
 import com.example.orenburjie.R
-import com.example.orenburjie.Repository
 import com.example.orenburjie.fragments.base.BaseFragment
-import com.example.orenburjie.priroda.adapters.ImagesAdapter
+import com.example.orenburjie.adapters.ImagesAdapter
 import com.example.orenburjie.viewmodels.DescriptionScreenViewModel
 import kotlinx.android.synthetic.main.fragment_description.*
 import kotlinx.android.synthetic.main.layout_nav_bar_with_title.*
