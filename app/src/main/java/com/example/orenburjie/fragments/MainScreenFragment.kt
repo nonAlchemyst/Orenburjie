@@ -14,8 +14,6 @@ import com.example.orenburjie.viewmodels.MainScreenViewModel
 class MainScreenFragment: BaseFragment<MainScreenViewModel>(MainScreenViewModel::class.java, R.layout.fragment_main_screen) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        requestWriteExternalStoragePermission()
-        requestReadExternalStoragePermission()
         nature.setOnClickListener {
             viewModel.naturePressed()
         }
@@ -28,25 +26,5 @@ class MainScreenFragment: BaseFragment<MainScreenViewModel>(MainScreenViewModel:
         developer_button.setOnClickListener {
             viewModel.developerPressed()
         }
-    }
-
-    private fun requestWriteExternalStoragePermission(): Boolean{
-        if(ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 3)
-        }else{
-            //Сработает если разрешение уже есть
-            return true
-        }
-        return false
-    }
-
-    private fun requestReadExternalStoragePermission(): Boolean{
-        if(ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
-        }else{
-            //Сработает если разрешение уже есть
-            return true
-        }
-        return false
     }
 }

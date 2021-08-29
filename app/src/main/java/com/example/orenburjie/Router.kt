@@ -1,12 +1,11 @@
 package com.example.orenburjie
 
+import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.example.orenburjie.fragments.*
-import com.example.orenburjie.fragments.base.BaseFragment
 import com.example.orenburjie.interfaces.OnBackPressed
-import com.example.orenburjie.viewmodels.ExcursionViewModel
 
 class Router {
 
