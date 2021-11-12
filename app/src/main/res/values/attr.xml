@@ -7,4 +7,5 @@
     <attr name="primaryBackgroundColor" format="color"/>
     <attr name="secondaryBackgroundColor" format="color"/>
     <attr name="gradientStartColor" format="color"/>
+    <attr name="imagePathResource" format="string"/>
 </resources>

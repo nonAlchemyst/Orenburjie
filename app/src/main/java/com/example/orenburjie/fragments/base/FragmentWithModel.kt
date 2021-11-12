@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -14,9 +13,9 @@ import com.example.orenburjie.BR
 import com.example.orenburjie.Router
 import com.example.orenburjie.interfaces.OnBackPressed
 
-open class BaseFragment<T: ViewModel>(private val viewModelClass: Class<T>, private val layoutSrc: Int): Fragment() {
+open class FragmentWithModel<T: ViewModel>(private val viewModelClass: Class<T>, private val layoutSrc: Int): Fragment() {
 
-    private val onSystemBackPressedListener = object: OnBackPressed{
+    private val onSystemBackPressedListener = object: OnBackPressed {
         override fun onBackPressed() {
             onBack()
         }
@@ -31,8 +30,10 @@ open class BaseFragment<T: ViewModel>(private val viewModelClass: Class<T>, priv
     ): View? {
         Router.setSystemBackPressedListener(onSystemBackPressedListener)
         viewModel = ViewModelProvider(this).get(viewModelClass)
-        val view = inflater.inflate(layoutSrc, container, false)
-        return view
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutSrc, container, false)
+        binding.setVariable(BR.viewModel, viewModel)
+        binding.executePendingBindings()
+        return binding.root
     }
 
     open fun onBack(){

@@ -1,32 +1,20 @@
 package com.example.orenburjie.adapters
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.recyclerview.widget.RecyclerView
+import androidx.databinding.ViewDataBinding
 import com.example.orenburjie.R
-import com.example.orenburjie.Repository
+import com.example.orenburjie.adapters.base.RecyclerViewAdapterWithBinding
 
-class ImagesAdapter(private val context: Context, private val resource: Int, private val images: List<String>): RecyclerView.Adapter<ImagesAdapter.Holder>() {
+class ImagesAdapter(private val images: List<String>): RecyclerViewAdapterWithBinding<RecyclerViewAdapterWithBinding.Holder>() {
 
-    class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var image: ImageView = itemView.findViewById(R.id.images_item_image)
+    companion object{
+        private const val layoutResId = R.layout.layout_image
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(context).inflate(resource, parent, false)
-        return Holder(view)
-    }
+    override fun getLayoutResId(position: Int): Int = layoutResId
 
-    override fun getItemCount(): Int {
-        return images.size
-    }
+    override fun getHolder(binding: ViewDataBinding): Holder = Holder(binding)
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        val path = images[position]
-        //Global.loadImageFromStorage(path, holder.image, context)
-        Repository.loadImage(path, holder.image, context)
-    }
+    override fun getItemByPosition(position: Int): String = images[position]
+
+    override fun getItemCount(): Int = images.size
 }

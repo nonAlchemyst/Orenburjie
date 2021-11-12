@@ -3,11 +3,18 @@ package com.example.orenburjie.viewmodels
 import com.example.orenburjie.objects.Item
 import com.example.orenburjie.Repository
 import com.example.orenburjie.Router
+import com.example.orenburjie.fragments.base.BaseViewModelV2
 import com.example.orenburjie.viewmodels.base.BaseViewModel
 
 class DescriptionScreenViewModel() : BaseViewModel() {
 
-    private lateinit var item: Item
+    private var item: Item? = null
+    val navTab = NavigationTab().apply { setListener(object: NavigationTab.OnSelect(){
+        override fun onRightSelected() {
+            toMapFragment()
+        }
+    })}
+    val navBar = NavBar()
 
     init {
         Repository.getInstance().getItem()?.let {
@@ -15,11 +22,15 @@ class DescriptionScreenViewModel() : BaseViewModel() {
         } ?: back()
     }
 
+    override fun onCreated() {
+        navTab.selectLeft()
+    }
+
     fun back(){
         Router.getInstance().backToMenuList()
     }
 
-    fun toRestingPlacesFargment(){
+    fun toRestingPlacesFragment(){
         Router.getInstance().showRestingPlacesFragment()
     }
 
@@ -31,10 +42,10 @@ class DescriptionScreenViewModel() : BaseViewModel() {
         Router.getInstance().showMapScreenFragment()
     }
 
-    fun getTitle() = item.title
+    fun getTitle() = item?.title
 
-    fun getDescription() = item.description
+    fun getDescription() = item?.description
 
-    fun getImages() = item.images
+    fun getImages() = item?.images
 
 }

@@ -22,4 +22,9 @@
         <item name="secondaryBackgroundColor">@color/c3b3b3b</item>
         <item name="gradientStartColor">@color/c80ffffff</item>
     </style>
+
+    <style name="SplashScreenTheme" parent="Theme.Orenburjie">
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
 </resources>
