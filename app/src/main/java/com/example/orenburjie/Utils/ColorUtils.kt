@@ -1,9 +1,10 @@
-package com.example.orenburjie
+package com.example.orenburjie.Utils
 
 import android.content.res.ColorStateList
 import android.graphics.Color
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
+import com.example.orenburjie.MainActivity
 
 object ColorUtils {
 

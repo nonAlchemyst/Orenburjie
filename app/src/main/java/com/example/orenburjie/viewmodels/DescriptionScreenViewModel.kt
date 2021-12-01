@@ -9,11 +9,7 @@ import com.example.orenburjie.viewmodels.base.BaseViewModel
 class DescriptionScreenViewModel() : BaseViewModel() {
 
     private var item: Item? = null
-    val navTab = NavigationTab().apply { setListener(object: NavigationTab.OnSelect(){
-        override fun onRightSelected() {
-            toMapFragment()
-        }
-    })}
+    var navTab: NavigationTab? = null
     val navBar = NavBar()
 
     init {
@@ -23,7 +19,12 @@ class DescriptionScreenViewModel() : BaseViewModel() {
     }
 
     override fun onCreated() {
-        navTab.selectLeft()
+        navTab = NavigationTab().apply { setListener(object: NavigationTab.OnSelect(){
+            override fun onRightSelected() {
+                toMapFragment()
+            }
+        })}
+        navTab?.selectLeft()
     }
 
     fun back(){

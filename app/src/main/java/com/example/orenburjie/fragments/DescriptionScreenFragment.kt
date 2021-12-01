@@ -24,7 +24,7 @@ open class DescriptionScreenFragment: BaseFragment<DescriptionScreenViewModel>(D
         /*description_page_2.setOnClickListener {
             viewModel.toRestingPlacesFragment()
         }*/
-        viewModel.navTab.selectLeft()
+        viewModel.navTab?.selectLeft()
         viewModel.getImages()?.let {
             adapter = ImagesAdapter(it)
         }

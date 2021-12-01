@@ -1,4 +1,6 @@
-package com.example.orenburjie
+package com.example.orenburjie.Utils
+
+import com.example.orenburjie.MainActivity
 
 object StringUtils {
 

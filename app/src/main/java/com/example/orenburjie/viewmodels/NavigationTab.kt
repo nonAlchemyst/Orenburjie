@@ -3,7 +3,6 @@ package com.example.orenburjie.viewmodels
 import android.content.res.ColorStateList
 import android.graphics.Color
 import androidx.databinding.ObservableField
-import com.example.orenburjie.ColorUtils
 import com.example.orenburjie.R
 
 

@@ -26,14 +26,15 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
             android:background="@drawable/shape_round_12"
+            android:backgroundTint="@{model.leftPageColor}"
             android:clickable="true"
             android:focusable="true"
-            android:backgroundTint="@{model.leftPageColor}"
             android:onClick="@{() -> model.selectLeft()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/view"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck">
 
             <TextView
                 android:id="@+id/leftText"

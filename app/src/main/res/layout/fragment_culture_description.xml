@@ -6,7 +6,7 @@
     <data>
         <variable name="viewModel" type="com.example.orenburjie.viewmodels.DescriptionScreenViewModel" />
         <import type="com.example.orenburjie.R"/>
-        <import type="com.example.orenburjie.StringUtilsJava"/>
+        <import type="com.example.orenburjie.Utils.StringUtilsJava"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

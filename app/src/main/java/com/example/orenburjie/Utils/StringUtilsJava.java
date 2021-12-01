@@ -1,4 +1,4 @@
-package com.example.orenburjie;
+package com.example.orenburjie.Utils;
 
 public class StringUtilsJava {
 
