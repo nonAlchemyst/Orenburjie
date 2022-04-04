@@ -144,10 +144,14 @@ class Router {
     private fun addFragment(fragment: Fragment){
         val manager = MainActivity.instance?.supportFragmentManager
 
-        manager?.commit {
-            replace(R.id.fragment_container, fragment, fragment.javaClass.name)
-            addToBackStack(fragment.javaClass.name)
-        }
+//        manager?.commit {
+//            replace(R.id.fragment_container, fragment, fragment.javaClass.name)
+//            addToBackStack(fragment.javaClass.name)
+//        }
+        val transaction = manager?.beginTransaction()
+        transaction?.replace(R.id.fragment_container, fragment, fragment.javaClass.name)
+        transaction?.addToBackStack(fragment.javaClass.name)
+        transaction?.commit()
     }
 
 }

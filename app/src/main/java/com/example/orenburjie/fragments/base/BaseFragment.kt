@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -31,8 +30,13 @@ open class BaseFragment<T: ViewModel>(private val viewModelClass: Class<T>, priv
     ): View? {
         Router.setSystemBackPressedListener(onSystemBackPressedListener)
         viewModel = ViewModelProvider(this).get(viewModelClass)
-        val view = inflater.inflate(layoutSrc, container, false)
-        return view
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutSrc, container, false)
+        binding?.let {
+            it.setVariable(BR.viewModel, viewModel)
+            it.executePendingBindings()
+            return it.root
+        }
+        return inflater.inflate(layoutSrc, container, false)
     }
 
     open fun onBack(){

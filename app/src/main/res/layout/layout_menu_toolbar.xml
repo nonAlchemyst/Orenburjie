@@ -16,5 +16,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/drawable_menu_toolbar_image" />
+         />
+    <!--app:srcCompat="@drawable/drawable_menu_toolbar_image"-->
 </androidx.constraintlayout.motion.widget.MotionLayout>
