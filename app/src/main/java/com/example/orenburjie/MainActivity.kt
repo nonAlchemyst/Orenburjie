@@ -4,14 +4,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
-import com.example.orenburjie.interfaces.OnBackPressed
 import com.example.orenburjie.viewmodels.MainViewModel
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
-import com.yandex.mapkit.MapKitFactory
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
+        instance = null
         super.onDestroy()
     }
 
@@ -51,4 +46,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getPreference(key: String): SharedPreferences = getSharedPreferences(key, MODE_PRIVATE)
+
+
 }

@@ -15,6 +15,7 @@
         <item name="background" parent="android:background">@color/c121212</item>
         <item name="nav_bar_with_title_title_color">@color/ceaebed</item>
         <item name="nav_bar_height">44dp</item>
+        <item name="menu_image_height">175dp</item>
 
         <item name="primaryTextColor">@color/cffffff</item>
         <item name="secondaryTextColor">@color/c262626</item>
@@ -22,4 +23,9 @@
         <item name="secondaryBackgroundColor">@color/c3b3b3b</item>
         <item name="gradientStartColor">@color/c80ffffff</item>
     </style>
+
+    <style name="SplashScreenTheme" parent="Theme.Orenburjie">
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
 </resources>

@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Andrei/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_description.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Andrei/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_excursions.xml" value="0.1" />
+        <entry key="..\:/Users/Andrei/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_main_screen.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/Andrei/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_resting_places.xml" value="0.25" />
+        <entry key="..\:/Users/Andrei/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/layout_menu_toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/Andrei/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/layout_nav_bar.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/Andrei/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/layout_nav_bar_with_title.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Andrei/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/layout_nav_tab.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Andrei/AndroidStudioProjects/Sights_of_Orenburjie/app/src/main/res/drawable/drawable_splash_screen.xml" value="0.33" />
         <entry key="..\:/Users/Andrei/AndroidStudioProjects/Sights_of_Orenburjie/app/src/main/res/drawable/info_ic.xml" value="0.3828125" />
         <entry key="..\:/Users/Andrei/AndroidStudioProjects/Sights_of_Orenburjie/app/src/main/res/drawable/main_menu_background_gradient.xml" value="0.3828125" />
@@ -43,6 +51,21 @@
         <entry key="..\:/Users/Andrei/AndroidStudioProjects/Sights_of_Orenburjie/app/src/main/res/menu/culture_bottom_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Andrei/AndroidStudioProjects/Sights_of_Orenburjie/app/src/main/res/menu/excursions_bottom_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Andrei/AndroidStudioProjects/Sights_of_Orenburjie/app/src/main/res/menu/main_menu_local_save.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/drawable/drawable_toolbar_background.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/activity_main.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_culture.xml" value="0.3546875" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_culture_description.xml" value="0.33" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_description.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_excursions_description.xml" value="0.3546875" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_main_menu.xml" value="0.3546875" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_main_screen.xml" value="0.3546875" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/fragment_test.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/layout_image.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/layout_menu_toolbar.xml" value="0.3546875" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/layout_nav_bar_with_title.xml" value="0.3546875" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/layout_nav_tab.xml" value="0.333786231884058" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/nature_list_item.xml" value="0.34375" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Orenburjie/app/src/main/res/layout/priroda_item_images_item.xml" value="0.19739583333333333" />
       </map>
     </option>
   </component>

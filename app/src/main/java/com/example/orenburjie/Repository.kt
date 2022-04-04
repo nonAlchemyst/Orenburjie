@@ -16,7 +16,6 @@ class Repository {
 
     companion object{
         private const val map_apikey: String = "b31628fd-7b04-425c-a4ab-994bb68fe5ea"
-        private const val readErrorMessage = "Read error"
         private var instance: Repository = Repository()
 
         fun getInstance() = instance
@@ -35,6 +34,7 @@ class Repository {
 
     }
 
+//     Но вот эту херню нужно поменять
     private var curItem: Item? = null
 
     fun setItem(item: Item){

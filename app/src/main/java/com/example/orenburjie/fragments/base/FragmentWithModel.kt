@@ -13,9 +13,9 @@ import com.example.orenburjie.BR
 import com.example.orenburjie.Router
 import com.example.orenburjie.interfaces.OnBackPressed
 
-open class BaseFragment<T: ViewModel>(private val viewModelClass: Class<T>, private val layoutSrc: Int): Fragment() {
+open class FragmentWithModel<T: ViewModel>(private val viewModelClass: Class<T>, private val layoutSrc: Int): Fragment() {
 
-    private val onSystemBackPressedListener = object: OnBackPressed{
+    private val onSystemBackPressedListener = object: OnBackPressed {
         override fun onBackPressed() {
             onBack()
         }
@@ -31,12 +31,9 @@ open class BaseFragment<T: ViewModel>(private val viewModelClass: Class<T>, priv
         Router.setSystemBackPressedListener(onSystemBackPressedListener)
         viewModel = ViewModelProvider(this).get(viewModelClass)
         val binding = DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutSrc, container, false)
-        binding?.let {
-            it.setVariable(BR.viewModel, viewModel)
-            it.executePendingBindings()
-            return it.root
-        }
-        return inflater.inflate(layoutSrc, container, false)
+        binding.setVariable(BR.viewModel, viewModel)
+        binding.executePendingBindings()
+        return binding.root
     }
 
     open fun onBack(){

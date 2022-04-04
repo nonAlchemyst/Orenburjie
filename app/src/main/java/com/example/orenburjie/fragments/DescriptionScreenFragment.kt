@@ -21,11 +21,12 @@ open class DescriptionScreenFragment: BaseFragment<DescriptionScreenViewModel>(D
         nav_bar_with_title_back.setOnClickListener {
             viewModel.back()
         }
-        description_page_2.setOnClickListener {
-            viewModel.toRestingPlacesFargment()
-        }
+        /*description_page_2.setOnClickListener {
+            viewModel.toRestingPlacesFragment()
+        }*/
+        viewModel.navTab?.selectLeft()
         viewModel.getImages()?.let {
-            adapter = ImagesAdapter(requireContext(), R.layout.priroda_item_images_item, it)
+            adapter = ImagesAdapter(it)
         }
         val manager = LinearLayoutManager(requireContext())
         manager.orientation = LinearLayoutManager.HORIZONTAL

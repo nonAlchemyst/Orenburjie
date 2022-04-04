@@ -17,6 +17,7 @@ open class BaseViewModel: ViewModel(){
     private var refValueListener: ValueEventListener
     private var items = ArrayList<Item>()
     private lateinit var dataReceivingListener: ICulture.DataReceiving
+    private var created: Boolean = true
 
     init {
         refValueListener = object: ValueEventListener {
@@ -29,7 +30,13 @@ open class BaseViewModel: ViewModel(){
                 dataReceivingListener.onCancelled()
             }
         }
+        if(created){
+            created = false
+            onCreated()
+        }
     }
+
+    open fun onCreated(){}
 
     private fun downloadData(){
         ref?.addValueEventListener(refValueListener)

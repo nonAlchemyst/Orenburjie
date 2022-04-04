@@ -15,6 +15,7 @@
         <item name="background" parent="android:background">@color/cffffff</item>
         <item name="nav_bar_with_title_title_color">@color/c262626</item>
         <item name="nav_bar_height">44dp</item>
+        <item name="menu_image_height">175dp</item>
 
         <item name="primaryTextColor">@color/c262626</item>
         <item name="secondaryTextColor">@color/cffffff</item>
@@ -25,5 +26,9 @@
 
     <style name="BottomNavigationItemColor" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">#009688</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.Orenburjie">
+        <item name="android:windowBackground">@color/black</item>
     </style>
 </resources>

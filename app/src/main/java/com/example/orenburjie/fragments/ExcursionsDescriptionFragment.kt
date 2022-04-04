@@ -25,7 +25,7 @@ class ExcursionsDescriptionFragment: BaseFragment<DescriptionScreenViewModel>(De
             viewModel.toInfoFragment()
         }
         viewModel.getImages()?.let {
-            adapter = ImagesAdapter(requireContext(), R.layout.priroda_item_images_item, it)
+            adapter = ImagesAdapter(it)
         }
         val manager = LinearLayoutManager(requireContext())
         manager.orientation = LinearLayoutManager.HORIZONTAL

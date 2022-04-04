@@ -88,7 +88,8 @@ class Router {
     fun back(){
         val manager = MainActivity.instance?.supportFragmentManager
         if(manager?.fragments?.size == 1){
-            MainActivity.instance?.back()
+            //MainActivity.instance?.back()
+            MainActivity.instance?.finish()
         }
         else{
             manager?.popBackStack()
@@ -99,8 +100,8 @@ class Router {
         val fragment = MainActivity.instance?.supportFragmentManager?.findFragmentById(R.id.fragment_container)
 
         if (fragment != null) {
-            //back()
-            onSystemBackPressedListener?.onBackPressed()
+            back()
+            //onSystemBackPressedListener?.onBackPressed()
         }
     }
 
@@ -115,10 +116,11 @@ class Router {
         manager?.backStackEntryCount?.let{
             var i = it - 1
             while ( i >= 0){
-                if(manager.getBackStackEntryAt(i).name == firstDestinationClassName){
+                val entryName = manager.getBackStackEntryAt(i).name
+                if(entryName == firstDestinationClassName){
                     return manager.popBackStackImmediate(firstDestinationClassName, 0)
                 }
-                if(manager.getBackStackEntryAt(i).name == secondDestinationClassName){
+                if(entryName == secondDestinationClassName){
                     return manager.popBackStackImmediate(secondDestinationClassName, 0)
                 }
                 i--
@@ -142,10 +144,14 @@ class Router {
     private fun addFragment(fragment: Fragment){
         val manager = MainActivity.instance?.supportFragmentManager
 
-        manager?.commit {
-            replace(R.id.fragment_container, fragment, fragment.javaClass.name)
-            addToBackStack(fragment.javaClass.name)
-        }
+//        manager?.commit {
+//            replace(R.id.fragment_container, fragment, fragment.javaClass.name)
+//            addToBackStack(fragment.javaClass.name)
+//        }
+        val transaction = manager?.beginTransaction()
+        transaction?.replace(R.id.fragment_container, fragment, fragment.javaClass.name)
+        transaction?.addToBackStack(fragment.javaClass.name)
+        transaction?.commit()
     }
 
 }
