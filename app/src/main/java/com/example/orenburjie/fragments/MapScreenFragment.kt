@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.orenburjie.R
 import com.example.orenburjie.fragments.base.BaseFragment
+import com.example.orenburjie.objects.Item
 import com.example.orenburjie.viewmodels.MapScreenViewModel
 import com.yandex.mapkit.Animation
 import com.yandex.mapkit.MapKitFactory
@@ -13,13 +14,14 @@ import com.yandex.runtime.image.ImageProvider
 import kotlinx.android.synthetic.main.fragment_map.*
 import kotlinx.android.synthetic.main.layout_nav_bar_with_title.*
 
-class MapScreenFragment: BaseFragment<MapScreenViewModel>(MapScreenViewModel::class.java, R.layout.fragment_map),
+class MapScreenFragment(private val item: Item): BaseFragment<MapScreenViewModel>(MapScreenViewModel::class.java, R.layout.fragment_map),
     CameraListener {
 
     private lateinit var cameraPos: CameraPosition
     private val defaultZoom = 14f
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.setItem(item)
         nav_bar_wirh_title_title.text = viewModel.getTitle()
         nav_bar_with_title_back.setOnClickListener {
             viewModel.back()

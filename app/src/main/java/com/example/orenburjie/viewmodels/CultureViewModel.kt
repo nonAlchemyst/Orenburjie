@@ -1,6 +1,7 @@
 package com.example.orenburjie.viewmodels
 
 import com.example.orenburjie.*
+import com.example.orenburjie.objects.Item
 import com.example.orenburjie.viewmodels.base.BaseViewModel
 
 class CultureViewModel: BaseViewModel() {
@@ -9,8 +10,8 @@ class CultureViewModel: BaseViewModel() {
         super.ref = MainActivity.instance?.firebase?.getReference("Culture")
     }
 
-    override fun next() {
-        Router.getInstance().showCultureDescriptionFragment()
+    fun goToDescriptionFragment(item: Item){
+        Router.getInstance().showCultureDescriptionFragment(item)
     }
 
     fun back(){

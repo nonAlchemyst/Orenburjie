@@ -9,6 +9,7 @@ import com.example.orenburjie.R
 import com.example.orenburjie.adapters.MenuListAdapter
 import com.example.orenburjie.fragments.base.BaseFragment
 import com.example.orenburjie.interfaces.ICulture
+import com.example.orenburjie.interfaces.OnMenuListItemClickListener
 import com.example.orenburjie.viewmodels.NatureViewModel
 import kotlinx.android.synthetic.main.fragment_nature.*
 import kotlinx.android.synthetic.main.layout_nav_bar.*
@@ -38,7 +39,11 @@ class NatureFragment: BaseFragment<NatureViewModel>(NatureViewModel::class.java,
     private fun fillList(view: RecyclerView, items: List<Item>){
         val adapter = MenuListAdapter(requireContext(), items, R.layout.nature_list_item)
         val manager = LinearLayoutManager(requireContext())
-        adapter.setOnMenuListItemClickListener(viewModel.onItemClickListener)
+        adapter.setOnMenuListItemClickListener(object: OnMenuListItemClickListener{
+            override fun onItemClick(item: Item) {
+                viewModel.goToDescriptionFragment(item)
+            }
+        })
         manager.orientation = LinearLayoutManager.VERTICAL
         view.setItemViewCacheSize(10)
         view.layoutManager = manager

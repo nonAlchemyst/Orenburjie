@@ -9,18 +9,16 @@ class RestingPlacesViewModel: ScreenLogicViewModel() {
 
     private lateinit var item: Item
 
-    init {
-        Repository.getInstance().getItem()?.let {
-            item = it
-        } ?: back()
+    fun setItem(item: Item){
+        this.item = item
     }
 
-    fun toDescriptionFragment(){
-        Router.getInstance().showDescriptionFragment()
+    fun toDescriptionFragment(item: Item){
+        Router.getInstance().showDescriptionFragment(item)
     }
 
-    fun toExcursionsDescriptionFragment(){
-        Router.getInstance().showExcursionsDescriptionFragment()
+    fun toExcursionsDescriptionFragment(item: Item){
+        Router.getInstance().showExcursionsDescriptionFragment(item)
     }
 
     override fun back(){

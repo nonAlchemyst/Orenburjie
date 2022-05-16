@@ -9,11 +9,6 @@ import com.example.orenburjie.objects.Item
 
 class Repository {
 
-    /*
-    * Типо глобального класса
-    * Лень придумывать что-то более правильное да и зачем :D
-    */
-
     companion object{
         private const val map_apikey: String = "b31628fd-7b04-425c-a4ab-994bb68fe5ea"
         private const val readErrorMessage = "Read error"
@@ -34,13 +29,5 @@ class Repository {
         }
 
     }
-
-    private var curItem: Item? = null
-
-    fun setItem(item: Item){
-        curItem = item
-    }
-
-    fun getItem() = curItem
 
 }

@@ -7,22 +7,24 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import com.example.orenburjie.R
 import com.example.orenburjie.fragments.base.BaseFragment
 import com.example.orenburjie.adapters.ImagesAdapter
+import com.example.orenburjie.objects.Item
 import com.example.orenburjie.viewmodels.DescriptionScreenViewModel
 import kotlinx.android.synthetic.main.fragment_description.*
 import kotlinx.android.synthetic.main.layout_nav_bar_with_title.*
 
-open class DescriptionScreenFragment: BaseFragment<DescriptionScreenViewModel>(DescriptionScreenViewModel::class.java, R.layout.fragment_description) {
+open class DescriptionScreenFragment(private val item: Item): BaseFragment<DescriptionScreenViewModel>(DescriptionScreenViewModel::class.java, R.layout.fragment_description) {
 
     private var adapter: ImagesAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.setItem(item)
         nav_bar_wirh_title_title.text = viewModel.getTitle()
         description_info.text = viewModel.getDescription()
         nav_bar_with_title_back.setOnClickListener {
             viewModel.back()
         }
         description_page_2.setOnClickListener {
-            viewModel.toRestingPlacesFargment()
+            viewModel.toRestingPlacesFargment(item)
         }
         viewModel.getImages()?.let {
             adapter = ImagesAdapter(requireContext(), R.layout.priroda_item_images_item, it)

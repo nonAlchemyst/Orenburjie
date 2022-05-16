@@ -48,9 +48,7 @@ open class BaseViewModel: ViewModel(){
         }
     }
 
-    protected open fun next(){
-        Router.getInstance().showDescriptionFragment()
-    }
+    protected open fun next(){}
 
     fun setDataReceivingListener(listener: ICulture.DataReceiving){
         dataReceivingListener = listener
@@ -58,12 +56,5 @@ open class BaseViewModel: ViewModel(){
     }
 
     fun getItems() = items
-
-    val onItemClickListener = object : OnMenuListItemClickListener {
-        override fun onItemClick(item: Item) {
-            Repository.getInstance().setItem(item)
-            next()
-        }
-    }
 
 }

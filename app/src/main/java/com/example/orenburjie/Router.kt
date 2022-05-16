@@ -1,11 +1,13 @@
 package com.example.orenburjie
 
+import android.content.ClipData
 import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.example.orenburjie.fragments.*
 import com.example.orenburjie.interfaces.OnBackPressed
+import com.example.orenburjie.objects.Item
 
 class Router {
 
@@ -41,32 +43,32 @@ class Router {
         }
     }
 
-    fun showMapScreenFragment(){
-        addFragment(MapScreenFragment())
+    fun showMapScreenFragment(item: Item){
+        addFragment(MapScreenFragment(item))
     }
 
-    fun showCultureDescriptionFragment(){
-        addFragment(CultureDescriptionFragment())
+    fun showCultureDescriptionFragment(item: Item){
+        addFragment(CultureDescriptionFragment(item))
     }
 
-    fun showExcursionsInfoFragment(){
-        addFragment(ExcursionsInfoFragment())
+    fun showExcursionsInfoFragment(item: Item){
+        addFragment(ExcursionsInfoFragment(item))
     }
 
-    fun showExcursionsDescriptionFragment(){
-        addFragment(ExcursionsDescriptionFragment())
+    fun showExcursionsDescriptionFragment(item: Item){
+        addFragment(ExcursionsDescriptionFragment(item))
     }
 
-    fun showRestingPlacesFragment(){
-        addFragment(RestingPlacesFragment())
+    fun showRestingPlacesFragment(item: Item){
+        addFragment(RestingPlacesFragment(item))
     }
 
     fun showZapovednikiFragment(){
         addFragment(ZapovednikiFragment())
     }
 
-    fun showDescriptionFragment(){
-        addFragment(DescriptionScreenFragment())
+    fun showDescriptionFragment(item: Item){
+        addFragment(DescriptionScreenFragment(item))
     }
 
     fun showCultureFragment(){
